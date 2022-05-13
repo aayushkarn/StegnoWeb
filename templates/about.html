@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4">Hello!</h1>
+	    <p class="lead">This website is still under development so you may face many difficulties.
+	    				You may encounter many bugs and errors. If you overcome one please feel free
+	    				to give us a feedback <a href="/feedback">here</a>.<br>
+	    				Sorry for inconvenience. :)
+	    </p>
+	    <p class="lead">
+	    	Hi there, Welcome to StegnoWeb. As, the name suggests 'Stegno' stands for Steganography, which is the practice of concealing a file, message, image, or video within another file, message, image, or video. In this website we are demonstrating the basics of steganography i.e, concealing text into image. If you want to know more about Steganography you can go <a href="https://en.wikipedia.org/wiki/Steganography" target="__blank__">here</a>.
+	    </p>
+	    <h5>Encoding</h5>
+	    <p class="lead">
+	    	Ok, so let me tell you more how encoding works. We ask user for a image and text they want to embed within image. The values of each pixel of image is then taken and converted into binary digits. Since the last digit doesn't have any noticible change it is then replaced with one binary digit of text. The 
+	    	process goes on until each digit of text is embedded into image. And finally a delimeter is added. A delimeter can be anything(for eg: $$$$$), this helps us know that this is the end of text embedded while decoding.
+	    </p>
+	    <h5>Decoding</h5>
+	    <p class="lead">
+	    	As, I said earlier the same process continues while decoding. After user uploads image, the values of each pixel of image is extracted and converted into binary. Then it keeps extracting the last digit of 
+	    	every binary digit and adding it all together until delimeter is found. The delimeter is then extracted and the binary digit is then converted into character.
+	    </p>
+	    You can find a proper explanation about Steganography 
+	    <a href="https://towardsdatascience.com/hiding-data-in-an-image-image-steganography-using-python-e491b68b1372" target="__blank__">here</a>.<br><br><br>
+	    <div class="row" style="background-color: #C0C0C0	;">
+	    	<div class="ml-auto mr-3">
+	    		<span style="font-family: 'Exo 2', sans-serif;font-size:20px;" >--StegnoWeb</span>
+	    	</div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+{% endblock%}

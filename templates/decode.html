@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% if errors is not none %}
+	{{errors |safe}}
+{% endif %}
+<div class="alert alert-info">
+	<center>As of now we are unable to check if the image is encoded or not.</center>
+</div>
+<div class="container">
+	<span style="font-family: 'Oswald', sans-serif;font-size: 30px;">Decode:</span>
+	<hr class="mt-0 pt-0">
+	<div class="row">
+		<div class="col-sm-6">
+			<form action = "/decode" method = "post" enctype="multipart/form-data">
+		  		<div class="form-group">
+			    	<label>Upload Picture</label><br>
+			    	<input type="file" name="file"/>
+			  	</div>
+			    <button class="btn btn-dark btn-block" onclick="loading()">
+			    <span id="button_value">Decode</span>
+			    <div id="loader" style="display: none;">
+			    	<div class="spinner-border" role="status">
+			  			<span class="sr-only">Loading...</span>
+					</div>
+				</div>
+				</button>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<label>Your decoded message appears here</label>
+			<textarea class="form-control" id="msgContainer" rows="4" readonly>
+				{{decoded}}
+			</textarea>
+		</div>
+	</div><br><br>
+	<center>
+		<img id="image_loading" style="display: none;" src="{{url_for('static', filename='img/decode_load.gif')}}" class="img-fluid" height="200" width="250">
+	</center>
+</div>
+<script type="text/javascript">
+	function loading(){
+		$("#button_value").hide()
+		$('#loader').show()
+		$('#image_loading').show()
+	}
+
+</script>
+
+
+{% endblock%}
