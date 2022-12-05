@@ -3,7 +3,7 @@ Image Steganography in Flask
 
 ## Clone Repo
 ```bash
- git clone https://github.com/aayush-karna/StegnoWeb.git
+ git clone https://github.com/aayushkarn/StegnoWeb.git
 ```
 
 ## Install requirements
